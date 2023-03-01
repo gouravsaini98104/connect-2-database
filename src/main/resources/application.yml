@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: "my-microservice"
+
+  profiles:
+    active: "dev"
+
+server:
+  port : 8081
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: "dev"
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mydb
+    username: gourav
+    password: gourav
+  second:
+    datasource:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/gourav
+      username: gourav
+      password: gourav
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 200MB
+      max-request-size: 215MB
+
+file:
+  upload-dir: D:\\itu\\uploads\\images
+
+
